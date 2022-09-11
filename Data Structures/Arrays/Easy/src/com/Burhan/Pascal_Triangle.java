@@ -2,28 +2,27 @@ package com.Burhan;
 
 public class Pascal_Triangle {
     public static void main(String[] args) {
-        int n = 4;
+        int n = 15;
         pascalTriangleEff(n);
     }
 
-
-// Naive
+    // Naive
     static void pascalTriangle(int n) {
         for (int i = 0; i <= n; i++) {
             for (int j = 0; j <= i; j++) {
-                int num = factorial(i)/(factorial(i-j)*factorial(j));
+                int num = nCr(n, i);
                 System.out.print(" " + num);
             }
             System.out.println();
         }
     }
-    
+
     // Efficient
     static void pascalTriangleEff(int n) {
-        int num = 0;
-        for (int i = 0; i <= n; i++) {
-            num = factorial(n)/(factorial(n-i)*factorial(i));
-            System.out.print(num + " ");
+        int C = 1;
+        for (int i = 1; i <= n; i++) {
+            System.out.print(C + " ");
+            C = C * (n - i) / i;
         }
     }
 
@@ -31,6 +30,10 @@ public class Pascal_Triangle {
         if (i == 0) {
             return 1;
         }
-        return i * factorial(i-1);
+        return i * factorial(i - 1);
+    }
+
+    static int nCr(int n, int i) {
+        return factorial(n) / (factorial(n-i) * factorial(i));
     }
 }
