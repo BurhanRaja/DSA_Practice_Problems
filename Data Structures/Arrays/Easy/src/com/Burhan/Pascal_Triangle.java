@@ -3,14 +3,19 @@ package com.Burhan;
 public class Pascal_Triangle {
     public static void main(String[] args) {
         int n = 15;
-        pascalTriangleEff(n);
+        // pascalTriangleEff(n);
+        int a = (int) factorial(n);
+        int b = (int) factorial(n - 2);
+        int c = (int) factorial(2);
+
+        System.out.print(a + " " + b + " " + c);
     }
 
     // Naive
     static void pascalTriangle(int n) {
         for (int i = 0; i <= n; i++) {
             for (int j = 0; j <= i; j++) {
-                int num = nCr(n, i);
+                long num = nCr(n, i);
                 System.out.print(" " + num);
             }
             System.out.println();
@@ -26,14 +31,17 @@ public class Pascal_Triangle {
         }
     }
 
-    static int factorial(int i) {
+    static long factorial(int i) {
         if (i == 0) {
             return 1;
         }
         return i * factorial(i - 1);
     }
 
-    static int nCr(int n, int i) {
+    static long nCr(int n, int i) {
         return factorial(n) / (factorial(n-i) * factorial(i));
     }
+
+
+    
 }
