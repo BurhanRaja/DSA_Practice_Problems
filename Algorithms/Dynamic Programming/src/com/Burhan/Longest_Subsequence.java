@@ -9,11 +9,11 @@ public class Longest_Subsequence {
         // int m = s1.length(); // 6
         // int n = s2.length(); // 7
 
-        // Simple recursion
+        // ** Naive
         // int ans = lcs(s1, s2, m, n);
         // System.out.print(ans);
 
-        // Memoization
+        // ** Memoization
         // memo = new int[m+1][n+1];
         // for (int i = 0; i < memo.length; i++) {
         //     for (int j = 0; j < memo[0].length; j++) {
@@ -24,13 +24,13 @@ public class Longest_Subsequence {
         // System.out.print(ans);
 
 
-        // Tabulation
+        // ** Tabulation
         int ans = lcs3(s1, s2);
         System.out.print(ans);
 
     }
 
-    // Naive
+    // ? Naive Solution
     static int lcs(String s1, String s2, int m, int n) {
         if (m == 0 || n == 0) {
             return 0;
@@ -44,7 +44,7 @@ public class Longest_Subsequence {
         }
     }
 
-    // Memoization Solution
+    // ? Memoization Solution
     static int[][] memo;
     static int lcs2(String s1, String s2, int m, int n) {
         if (memo[m][n] != -1) {
@@ -66,7 +66,7 @@ public class Longest_Subsequence {
         return memo[m][n];
     }
 
-    // Tabulation Solution
+    // ? Tabulation Solution
     static int lcs3(String s1, String s2) {
         int m = s1.length();
         int n = s2.length();
