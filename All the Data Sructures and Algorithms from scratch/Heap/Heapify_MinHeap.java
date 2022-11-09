@@ -33,7 +33,7 @@ public class Heapify_MinHeap {
             if (left < size && arr[left] < arr[i]) {
                 smallest = left;
             }
-            if (right < size && arr[right] < arr[i]) {
+            if (right < size && arr[right] < arr[smallest]) {
                 smallest = right;
             }
 
