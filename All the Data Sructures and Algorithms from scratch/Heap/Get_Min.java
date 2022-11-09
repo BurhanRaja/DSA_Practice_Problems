@@ -32,7 +32,7 @@ public class Get_Min {
             if (left < size && arr[left] < arr[i]) {
                 smallest = left;
             }
-            if (right < size && arr[right] < arr[i]) {
+            if (right < size && arr[right] < arr[smallest]) {
                 smallest = right;
             }
 
@@ -80,16 +80,16 @@ public class Get_Min {
 
     public static void main(String[] args) {
         Node h = new Node(10);
-        h.insert(50);
-        h.insert(40);
-        h.insert(70);
-        h.insert(10);
-        h.insert(100);
-        h.insert(60);
-        h.insert(80);
         h.insert(20);
+        h.insert(25);
         h.insert(30);
-        h.insert(90);
+        h.insert(35);
+        h.insert(40);
+        h.insert(80);
+        h.insert(32);
+        h.insert(100);
+        h.insert(70);
+        h.insert(60);
         
         int ans = h.getMin();
         System.out.println(ans);
